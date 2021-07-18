@@ -11,6 +11,7 @@ export default function Video ({ handleTakePhoto, height, width }: VideoProps) {
   const canvas = useRef<any>('')
 
   useEffect(() => {
+    video.current.defaultMuted = true
     navigator.mediaDevices.getUserMedia({
       video: {
         width: { ideal: width },
@@ -32,7 +33,7 @@ export default function Video ({ handleTakePhoto, height, width }: VideoProps) {
   return (
     <>
       <div className={styles.wrapper}>
-        <video className={styles.player} ref={video} autoPlay={true} muted={true}></video>
+        <video className={styles.player} ref={video} autoPlay={true} muted loop={true} controls={false} playsInline={true}></video>
         <canvas ref={canvas} width={width} height={height} style={{ display: 'none' }}></canvas>
         <button className={styles.click} onClick={takePhoto}></button>
       </div>
