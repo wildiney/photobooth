@@ -32,7 +32,7 @@ export default function Video ({ handleTakePhoto, height, width }: VideoProps) {
   return (
     <>
       <div className={styles.wrapper}>
-        <video className={styles.player} ref={video} autoPlay={true}></video>
+        <video className={styles.player} ref={video} autoPlay={true} muted={true}></video>
         <canvas ref={canvas} width={width} height={height} style={{ display: 'none' }}></canvas>
         <button className={styles.click} onClick={takePhoto}></button>
       </div>
