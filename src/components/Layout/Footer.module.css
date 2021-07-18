@@ -1,0 +1,14 @@
+.footer {
+  grid-row: 3/4;
+  text-align: center;
+  align-self: center;
+  background-color: lightgray;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+p {
+  font-size: 0.8rem;
+}

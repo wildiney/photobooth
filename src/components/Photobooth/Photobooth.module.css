@@ -1,0 +1,10 @@
+.video {
+  width: 100%;
+}
+
+.main {
+  grid-row: 2/3;
+  justify-content: start;
+  grid-template-rows: 3fr 1fr 10vh;
+  display: grid;
+}
