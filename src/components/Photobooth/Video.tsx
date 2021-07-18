@@ -2,13 +2,13 @@ import React, { useEffect, useRef } from 'react'
 import styles from './Video.module.css'
 
 interface VideoProps {
-  handleTakePhoto: string,
+  handleTakePhoto: any,
   height: number,
   width: number,
 }
 export default function Video ({ handleTakePhoto, height, width }: VideoProps) {
-  const video = useRef('')
-  const canvas = useRef('')
+  const video = useRef<any>('')
+  const canvas = useRef<any>('')
 
   useEffect(() => {
     navigator.mediaDevices.getUserMedia({
@@ -22,7 +22,7 @@ export default function Video ({ handleTakePhoto, height, width }: VideoProps) {
     })
   })
 
-  const takePhoto = (photo) => {
+  const takePhoto = (photo: any) => {
     console.log("photo")
     const ctx = canvas.current.getContext("2d")
     ctx.drawImage(video.current, 0, 0, width, height);
